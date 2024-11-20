@@ -54,13 +54,17 @@ function AddUserToRegistry() {
 }
 
 function CheckRegistry() {
+  if(settings.checkRegistry === true) {
+
   for(let n=0; n< users.length; n++) {
     console.log(`Here are the people registered: ${users[n]}`)
   }
-  //loop through all the users and log them
 }
-
-function BanUser(){
+else {
+  console.log ("Permission Denied");
+}
+}
+function BanUser() {
   readline.question("Enter the name of the person you would like to ban: ", _ban => {
     let checkBan= false;
     for(let i=0; i < banned.length; i++) {
@@ -83,9 +87,13 @@ function BanUser(){
 }
 
 function CheckBanned(){
+  if (settings.checkBans === true) {
   for(let b=0; b<banned.length; b++) {
 console.log(`Banned user: ${banned[b]}`);
   }
+} else {
+  console.log("Permission Denied");
+}
   //loop through all the banned users and log them
 }
 
@@ -110,6 +118,14 @@ function StartApp() {
     settings.addRegistry = !settings.addRegistry;
     StartApp();
   } 
+  else if (_command === "check register") {
+    settings.checkRegistry = !settings.checkRegistry;
+    StartApp();
+  } 
+  else if (_command === "check banned list") {
+    settings.checkBans = !settings.checkBans;
+    StartApp();
+  } 
    else if (_command !== "quit") {
       StartApp();
     } else {
@@ -119,3 +135,9 @@ function StartApp() {
 }
 
 StartApp();
+
+
+// Clear and organized code, easy to understand - Sandy
+/* Reviewed by Thea
+Helped with figuring out why code wasn't running 
+I like how organized the coding and plan is! Very easy to read and understand, it helped me understand why the code wasn't running. */

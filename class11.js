@@ -122,7 +122,7 @@ function StartApp() {
     settings.checkRegistry = !settings.checkRegistry;
     StartApp();
   } 
-  else if (_command === "check banned list") {
+  else if (_command === "banned") {
     settings.checkBans = !settings.checkBans;
     StartApp();
   } 
@@ -141,3 +141,6 @@ StartApp();
 /* Reviewed by Thea
 Helped with figuring out why code wasn't running 
 I like how organized the coding and plan is! Very easy to read and understand, it helped me understand why the code wasn't running. */
+
+/* Reviewed by Daniel
+Clear and easy to understand. Plan is detailed but you could make it easier to read!*/
